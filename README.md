@@ -26,5 +26,6 @@ for example:
 *  "http://localhost:8000/off" means to turn off  immediately.
 * "http://192.168.0.2:8080/on?5" means to turn on in 5 seconds.
 
- To configure host and port, please see config.ini.  
+To shutdown the server, please press Ctrl+C.  
+To configure host and port, please see config.ini.  
 Attention: You may need to configure port and firewall settings on your Internet router. 
