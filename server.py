@@ -18,7 +18,13 @@ class MyHandler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         url=urlparse(self.path)
-        body = b'Usage: http://host:port/(on|off)[?wait seconds]'
+        body = bytes('''<h1>DisplayOff</h1><hr>
+        Usage: http://{0}:{1}/(on|off)[?wait seconds]<br>
+        <br>
+        Quick link:<br>
+        <a href=http://{0}:{1}/off>Turn off now</a><br>
+        <a href=http://{0}:{1}/on>Turn on now</a><br>
+        '''.format(host,port),'ascii')
         wait=0
 
         if url.query.isdigit() and int(url.query) >0:
@@ -26,10 +32,18 @@ class MyHandler(SimpleHTTPRequestHandler):
         
         if url.path == '/on':
             dispctrl.DispOn(wait)
-            body = b'Turning on succeeded.'
+            body = bytes('''<h1>DisplayOff</h1><hr>
+            Turning on succeeded.<br>
+            <br>
+            <a href=http://{0}:{1}/>Back to top page</a><br>
+            '''.format(host,port),'ascii')
         elif url.path == '/off':
             dispctrl.DispOff(wait)
-            body = b'Turning off succeeded.'
+            body = bytes('''<h1>DisplayOff</h1><hr>
+            Turning off succeeded.<br>
+            <br>
+            <a href=http://{0}:{1}/>Back to top page</a><br>
+            '''.format(host,port),'ascii')
 
         self.send_response(200)
         self.send_header('Content-type', 'text/html; charset=utf-8')
