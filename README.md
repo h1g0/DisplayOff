@@ -14,8 +14,7 @@ optional arguments:
   -o, --on              Turn on the display.
   -w WAIT, --wait WAIT  wait <WAIT> seconds before turning off (on). (default=0)
   ```
-
-  ## server.py
+## server.py
   
 ```
 usage:
