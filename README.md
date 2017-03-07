@@ -1,6 +1,6 @@
 # DisplayOff
-A Python script for turning (on|off) the display by using Win32API.  
-Server program is also included so that you may run this script from the web browser on your remote computers.
+A Python script for turning the display on or off by using Win32API.  
+The server program is also included so that you may run this script from the web browser on your remote computers.
 
 ## main.py
 Turning (on|off) by local compter.
@@ -10,9 +10,9 @@ python main.py [-h] [-x | -o] [-w WAIT]
 
 optional arguments: 
   -h, --help            show this help message and exit 
-  -x, --off             Turn off the display. (default)
-  -o, --on              Turn on the display.
-  -w WAIT, --wait WAIT  wait <WAIT> seconds before turning off (on). (default=0)
+  -x, --off             Turn the display off. (default)
+  -o, --on              Turn the display on.
+  -w WAIT, --wait WAIT  wait <WAIT> seconds before turning off or on. (default=0)
   ```
 ## server.py
   
