@@ -21,3 +21,6 @@
 *.app
 
 /__pycache__
+
+.venv/
+.vscode/
